@@ -17,8 +17,9 @@ export default defineConfig({
       resolvers: [ElementPlusResolver()],
     }),
     Components({
-      resolvers: [ElementPlusResolver()],
+      dirs: ['src/components'],
       directoryAsNamespace: true,
+      resolvers: [ElementPlusResolver()],
     })
   ],
   resolve: {

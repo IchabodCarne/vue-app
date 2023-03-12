@@ -1,22 +1,36 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import type { RouteRecordRaw } from 'vue-router'
+import Layout from '@/views/Layout.vue'
+import Login from '@/views/Login.vue'
 
-const routes: RouteRecordRaw[] = []
+const loginRouter: RouteRecordRaw = {
+  path: '/login',
+  name: 'login',
+  component: Login
+}
+
+const homeRouter: RouteRecordRaw = {
+  path: '/',
+  name: 'home',
+  component: Layout,
+  children: []
+}
 
 const routeModule = import.meta.glob('../views/**/*.vue')
 
 for (const path in routeModule) {
   routeModule[path]().then((mod: any) => {
-    const file = mod.default
-    if (!file.isRouter) return
-    // 首字母转小写 letterToLowerCase 首字母转大写 letterToUpperCase
-    // router.addRoute({
-    //   path: `/${letterToLowerCase(file.name)}`,
-    //   name: `${letterToUpperCase(file.name)}`,
-    //   component: file
-    // })
+    const routerFile = mod.default
+    if (!routerFile.isRouter) return
+    homeRouter.children.push({
+      path: `/${routerFile.name.toLowerCase()}`,
+      name: `${routerFile.name.toLowerCase()}`,
+      component: routerFile
+    })
   })
 }
+
+const routes: RouteRecordRaw[] = [loginRouter, homeRouter]
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),

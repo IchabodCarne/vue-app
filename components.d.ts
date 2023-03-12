@@ -9,15 +9,16 @@ export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
-    HelloWorld: typeof import('./src/components/HelloWorld.vue')['default']
-    IconsIconCommunity: typeof import('./src/components/icons/IconCommunity.vue')['default']
-    IconsIconDocumentation: typeof import('./src/components/icons/IconDocumentation.vue')['default']
-    IconsIconEcosystem: typeof import('./src/components/icons/IconEcosystem.vue')['default']
-    IconsIconSupport: typeof import('./src/components/icons/IconSupport.vue')['default']
-    IconsIconTooling: typeof import('./src/components/icons/IconTooling.vue')['default']
+    ElAside: typeof import('element-plus/es')['ElAside']
+    ElContainer: typeof import('element-plus/es')['ElContainer']
+    ElHeader: typeof import('element-plus/es')['ElHeader']
+    ElMain: typeof import('element-plus/es')['ElMain']
+    ElMenu: typeof import('element-plus/es')['ElMenu']
+    ElMenuItem: typeof import('element-plus/es')['ElMenuItem']
+    ElMenuItemGroup: typeof import('element-plus/es')['ElMenuItemGroup']
+    ElSubMenu: typeof import('element-plus/es')['ElSubMenu']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
-    TheWelcome: typeof import('./src/components/TheWelcome.vue')['default']
-    WelcomeItem: typeof import('./src/components/WelcomeItem.vue')['default']
+    VaHeader: typeof import('./src/components/VaHeader.vue')['default']
   }
 }
