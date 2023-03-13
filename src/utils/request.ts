@@ -1,13 +1,13 @@
 import { createFetch } from '@vueuse/core'
 import type { MaybeComputedRef } from '@vueuse/core'
-import { ElLoading } from 'element-plus'
+// import { ElLoading } from 'element-plus'
 
-const loadingInstance = ElLoading.service({
-  fullscreen: true,
-  lock: true,
-  text: 'Loading',
-  background: 'rgba(0, 0, 0, 0.5)'
-})
+// const loadingInstance = ElLoading.service({
+//   fullscreen: true,
+//   lock: true,
+//   text: 'Loading',
+//   background: 'rgba(0, 0, 0, 0.5)'
+// })
 
 const customizedFetch = createFetch({
   baseUrl: '',
@@ -33,7 +33,7 @@ export const post = async (url: string | MaybeComputedRef<string>, params?: any)
     .post()
     .json()
 
-  loadingInstance.close()
+  // loadingInstance.close()
 
   return data.value
 }
