@@ -15,11 +15,14 @@ export default defineConfig({
     AutoImport({
       imports: ['vue', 'vue-router', 'pinia'],
       resolvers: [ElementPlusResolver()],
+      eslintrc: {
+        enabled: true
+      }
     }),
     Components({
       dirs: ['src/components'],
       directoryAsNamespace: true,
-      resolvers: [ElementPlusResolver()],
+      resolvers: [ElementPlusResolver()]
     })
   ],
   resolve: {
