@@ -1,6 +1,4 @@
-<script lang="ts" setup>
-import VaHeader from '@/components/VaHeader.vue'
-</script>
+<script lang="ts" setup></script>
 
 <template>
   <el-container class="h-screen">
@@ -9,13 +7,7 @@ import VaHeader from '@/components/VaHeader.vue'
     </el-header>
     <el-container>
       <el-aside width="280px">
-        <el-menu
-          active-text-color="#ffd04b"
-          background-color="#545c64"
-          class="el-menu-vertical-demo"
-          default-active="2"
-          text-color="#fff"
-        >
+        <el-menu class="el-menu-vertical-demo" default-active="2">
           <el-sub-menu index="1">
             <template #title>
               <span>Navigator One</span>
