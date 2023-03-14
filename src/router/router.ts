@@ -25,11 +25,12 @@ routes.push(layoutRouter, loginRouter)
 
 // 页面组件路由定义
 Object.entries(views).forEach(([file, component]) => {
+  const filePath = file.split('/')
   // @ts-ignore
-  let path = file.split('/').pop().slice(0, -4)
+  let path = filePath.pop().slice(0, -4)
   if (path === 'index') {
     // 若文件夹下只有一个vue页面，以文件夹名称作为路由path
-    path = file.split('/').at(-2) ?? ''
+    path = filePath.at(-2) ?? ''
   }
   if (path && path.toLowerCase() !== 'login') {
     layoutRouter.children.push({
